@@ -5,10 +5,12 @@ const historyBtn = document.getElementById("historyBtn");
 const donationSection = document.getElementById("donationSection");
 const historySection = document.getElementById("historySection");
 const donateBtn = document.getElementById("donateBtn");
+const donateBtnDhaka = document.getElementById("donateBtnDhaka");
 const donationModal = document.getElementById("donationModal");
 const accountBalance = document.getElementById("accountBalance");
 const donationAmountInput = document.getElementById("donationAmount");
-const historySectionDiv = document.getElementById("historySection");
+const donationAmountDhakaInput = document.getElementById("donationAmountDhaka");
+const historySectionDiv = document.getElementById("historySectionDiv");
 
 // Initial balance
 let balance = 10000;
@@ -20,30 +22,40 @@ function updateBalanceDisplay() {
 
 // Switch between donation and history sections
 donationBtn.addEventListener("click", function () {
-  donationSection.classList.remove("hidden");
-  historySection.classList.add("hidden");
+  donationSection.classList.remove("hidden"); // Show donation section
+  historySection.classList.add("hidden"); // Hide history section
 
-  donationBtn.classList.add("active-tab");
-  donationBtn.classList.remove("inactive-tab");
-
-  historyBtn.classList.add("inactive-tab");
-  historyBtn.classList.remove("active-tab");
+  // Update button styles
+  donationBtn.classList.add("bg-lime-400");
+  donationBtn.classList.remove("bg-gray-300");
+  historyBtn.classList.add("bg-gray-300");
+  historyBtn.classList.remove("bg-lime-400");
 });
 
 historyBtn.addEventListener("click", function () {
-  donationSection.classList.add("hidden");
-  historySection.classList.remove("hidden");
+  historySection.classList.remove("hidden"); // Show history section
+  donationSection.classList.add("hidden"); // Hide donation section
 
-  historyBtn.classList.add("active-tab");
-  historyBtn.classList.remove("inactive-tab");
-
-  donationBtn.classList.add("inactive-tab");
-  donationBtn.classList.remove("active-tab");
+  // Update button styles
+  historyBtn.classList.add("bg-lime-400");
+  historyBtn.classList.remove("bg-gray-300");
+  donationBtn.classList.add("bg-gray-300");
+  donationBtn.classList.remove("bg-lime-400");
 });
 
-// Handle donation
+// Handle donation for Noakhali
 donateBtn.addEventListener("click", function () {
-  const donationAmount = parseInt(donationAmountInput.value);
+  handleDonation(donationAmountInput, "Donate for Flood at Noakhali, Bangladesh");
+});
+
+// Handle donation for Dhaka Earthquake
+donateBtnDhaka.addEventListener("click", function () {
+  handleDonation(donationAmountDhakaInput, "Donate for Earthquake in Dhaka");
+});
+
+// Handle the donation process
+function handleDonation(donationInput, description) {
+  const donationAmount = parseInt(donationInput.value);
 
   if (isNaN(donationAmount) || donationAmount <= 0) {
     alert("Please enter a valid donation amount.");
@@ -60,23 +72,18 @@ donateBtn.addEventListener("click", function () {
   updateBalanceDisplay();
 
   // Reset the input
-  donationAmountInput.value = "";
+  donationInput.value = "";
 
   // Add donation to history
-  addDonationToHistory(donationAmount, "Donate for Flood at Noakhali, Bangladesh");
+  addDonationToHistory(donationAmount, description);
 
   // Show success modal
   donationModal.showModal();
-});
+}
 
 // Close the modal
 donationModal.querySelector(".btn").addEventListener("click", function () {
   donationModal.close();
-});
-
-// Blog button (Example redirect)
-blogBtn.addEventListener("click", function () {
-  window.location.href = "https://example.com/blog"; // Change this to your actual blog page
 });
 
 // Add donation to history
