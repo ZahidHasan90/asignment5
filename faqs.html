@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ | Donate Bangladesh: Together We Can Rebuild</title>
+
+    <!-- Google Fonts CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    
+    <!-- Basic CSS Styling for FAQ -->
+    <style>
+      body {
+        font-family: 'Lexend', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        background-color: rgba(255, 165, 0, 0.1);
+        backdrop-filter: blur(5px);
+        padding: 20px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin: 2rem 0;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .faq-section {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background-color: #f8f8f8;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-title {
+        padding: 1rem;
+        font-size: 1.25rem;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .faq-content {
+        display: none;
+        padding: 1rem;
+        border-top: 1px solid #e0e0e0;
+      }
+
+      .faq-title i {
+        transition: transform 0.3s ease;
+      }
+
+      .faq-title.active i {
+        transform: rotate(180deg);
+      }
+
+      .faq-item.active .faq-content {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header>
+      <nav class="container">
+        <!-- Home Link -->
+        <a href="index.html" class="text-lg bg-lime-400 text-black px-4 py-2 rounded-md">
+          <i class="fa-solid fa-house"></i> Home
+        </a>
+
+        <!-- Logo and Title -->
+        <div class="navbar-center">
+          <img src="assets/logo.png" alt="Logo" class="w-8 h-8 sm:w-10 sm:h-10 mr-2" />
+          <span class="text-lg sm:text-xl font-bold">Help Bangladesh</span>
+        </div>
+
+        <!-- Account Balance -->
+        <div class="hidden md:flex items-center gap-2">
+          <img src="assets/coin.png" alt="Coin" class="w-6 h-6" />
+          <span class="font-bold text-sm sm:text-base">10000 BDT</span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main FAQ Section -->
+    <main class="container my-8">
+      <!-- Title -->
+      <h1>Frequently Asked Questions</h1>
+
+      <!-- FAQ Accordion -->
+      <div class="faq-section">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+          <div class="faq-title">
+            <span>What is the Document Object Model (DOM)?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-content">
+            <p>
+              The Document Object Model (DOM) is a programming interface for web documents that represents the structure of HTML or XML as a tree of objects. It allows scripts to dynamically access and update the content, structure, and style of a document.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+          <div class="faq-title">
+            <span>How do you select an element from the DOM?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-content">
+            <p>
+              DOM elements can be selected using JavaScript methods such as `getElementById`, `getElementsByClassName`, `getElementsByTagName`, or the modern `querySelector` and `querySelectorAll`.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+          <div class="faq-title">
+            <span>What is event delegation in the context of the DOM, and why is it useful?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-content">
+            <p>
+              Event delegation is a technique in the DOM where a single event listener is attached to a parent element to manage events triggered by its children, even if new children are added dynamically. This improves performance and simplifies event management.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+          <div class="faq-title">
+            <span>How do you manipulate an element’s attributes and styles using the DOM?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-content">
+            <p>
+              You can manipulate an element’s attributes using methods such as `setAttribute()`, `getAttribute()`, or `removeAttribute()`. You can also change styles dynamically by modifying the `style` property of the element, for example, `element.style.color = "red"`.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+          <div class="faq-title">
+            <span>What is the difference between `innerHTML` and `textContent`?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-content">
+            <p>
+              `innerHTML` retrieves or sets the HTML markup inside an element, while `textContent` retrieves or sets only the text inside an element, excluding any HTML tags.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-item">
+          <div class="faq-title">
+            <span>How do you create a new element in the DOM?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-content">
+            <p>
+              You can create a new element using JavaScript with the method `document.createElement()`. For example, `const newDiv = document.createElement('div')` creates a new `<div>` element in the DOM.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 7 -->
+        <div class="faq-item">
+          <div class="faq-title">
+            <span>What is the difference between `addEventListener` and `onclick` in the DOM?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-content">
+            <p>
+              `addEventListener` allows you to add multiple event listeners of the same type to an element, while `onclick` replaces any existing event listeners. `addEventListener` is generally more versatile and is considered best practice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- JavaScript to handle accordion behavior -->
+    <script>
+      const faqItems = document.querySelectorAll(".faq-item");
+
+      faqItems.forEach(item => {
+        const title = item.querySelector(".faq-title");
+
+        title.addEventListener("click", () => {
+          item.classList.toggle("active");
+          const icon = title.querySelector("i");
+          icon.classList.toggle("fa-chevron-down");
+          icon.classList.toggle("fa-chevron-up");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+.active-tab {
+    background-color: #A3E635;
+    color: black;
+  }
+
+  .inactive-tab {
+    background-color: #f3f3f3;
+    color: gray;
+  }
+
+  .balance-display {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #FFD700;
+  }
+
+  .donation-card {
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  /* Modal Styling */
+  dialog[open] {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding: 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+    z-index: 999;
+  }
+
+  dialog .modal-box {
+    padding: 20px;
+  }
